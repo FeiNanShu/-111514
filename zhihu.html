@@ -233,6 +233,8 @@ body { margin:0; background: rgb(var(--white-monochrome)); }
 
 <script>
 function run(text) {
+    var sel = document.getSelection();
+    var saved = sel && sel.rangeCount > 0 ? sel.getRangeAt(0) : null;
     var temp = document.createElement('div');
     temp.appendChild(document.createElement('pre')).textContent = text;
     temp.style.position = 'fixed';
@@ -240,23 +242,32 @@ function run(text) {
     temp.style.top = '0';
     document.body.appendChild(temp);
     document.getSelection().selectAllChildren(temp);
-    var result = document.execCommand('copy');
+    var result = false;
+    try { result = document.execCommand('copy'); } catch (e) { result = false; }
     document.body.removeChild(temp);
+    if (saved) {
+        sel.removeAllRanges();
+        sel.addRange(saved);
+    }
     return result;
 }
 
 document.querySelectorAll('.button-container button').forEach(function(btn){
     btn.onclick = function(){
-        var id = this.id.replace('button-', 'src-');
+        var id = this.id.replace(/^button-/, 'src-');
         var src = document.getElementById(id);
         if (!src) return;
         var ok = run(src.textContent);
-        var original = this.textContent;
-        this.textContent = ok ? '已复制！' : '复制失败';
         var self = this;
-        setTimeout(function(){ self.textContent = original; }, 800);
+        if (!self.dataset.original) self.dataset.original = self.textContent;
+        self.textContent = ok ? '已复制！' : '复制失败';
+        clearTimeout(self._t);
+        self._t = setTimeout(function(){ self.textContent = self.dataset.original; }, 800);
     };
 });
 </script>
+
+
+
 </body>
 </html>
