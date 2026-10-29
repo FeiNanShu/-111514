@@ -10,12 +10,6 @@
    [2026 stack theme]
    by ShuXiangYue & feinansu
 */
-@import url("./normalize.css");
-@import url("./black-highlighter.css");
-@import url("../../New_BHL/css/banlist.css");
-@import url("../../New_BHL/css/forum.css");
-@import url("../../stickers/css/stickers.css");
-
 :root {
     --theme-base: "black-highlighter";
     --theme-id: "liminal";
