@@ -10,7 +10,7 @@
 :root {
         --white-monochrome: 252, 253, 255;
     --pale-gray-monochrome: 232, 245, 252;
-    --light-gray-monochrome: 164, 193, 215;
+    --light-gray-monochrome: 18, 35, 55 ,0.7;
     --gray-monochrome: 70, 145, 220;
     --black-monochrome: 18, 35, 55;
 
@@ -26,7 +26,7 @@ body { margin:0; background: rgb(var(--white-monochrome)); }
 
 .button-container {
     display: flex;
-    border-bottom: 0.125rem solid rgb(var(--light-gray-monochrome));
+    border-bottom: 0.125rem solid rgba(var(--light-gray-monochrome));
     height: 1.5rem;
     min-height: 1.5rem;
     margin: 0;
@@ -48,8 +48,8 @@ body { margin:0; background: rgb(var(--white-monochrome)); }
     display: inline-flex;
 }
 
-.button-container button:first-child { border-right: 1px solid rgb(var(--light-gray-monochrome)); }
-.button-container button:last-child { border-left: 1px solid rgb(var(--light-gray-monochrome)); }
+.button-container button:first-child { border-right: 1px solid rgba(var(--light-gray-monochrome)); }
+.button-container button:last-child { border-left: 1px solid rgba(var(--light-gray-monochrome)); }
 .button-container button:hover { background-color: rgba(var(--gray-monochrome), 0.15); }
 
 .head p {
