@@ -419,9 +419,9 @@ margin: 0;
   border: 1px solid #3377dd;
 }
 .owindow.owait {
-  background-color: #1a2cff;
-  color: #e6edf7;
-  border: 2px solid #3377dd;
+  background-color: rgb(var(--light-gray-monochrome));
+  color: #000000;
+  border: 2px solid rgb(var(--gray-monochrome));
 }
 .owindow.owait .wait-icon {
   display: none;
@@ -444,9 +444,9 @@ margin: 0;
 }
 
 .owindow.osuccess {
-  background-color: #1a2c48;
-  color: #e6edf7;
-  border: 2px solid #3377dd;
+  background-color: rgb(var(--light-gray-monochrome));
+  color: #000000;
+  border: 2px solid rgb(var(--gray-monochrome));
 }
 .owindow.osuccess .wait-icon {
   display: none;
