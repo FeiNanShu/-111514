@@ -10,6 +10,7 @@
    [2026 stack theme]
    by ShuXiangYue & feinansu
 */
+@import url("https://github.backroomswiki.cn/Old_BHL/css/liminal-impact.css");
 :root {
     --theme-base: "black-highlighter";
     --theme-id: "liminal";
